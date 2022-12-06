@@ -14,9 +14,7 @@ import { formatPrice } from "../utils/helpers";
 import { useNavigate } from "react-router-dom";
 import { GiEvilComet } from "react-icons/gi";
 
-const promise = loadStripe(
-  "pk_test_51Lhs0tB1vIlpp2NLHeZyyRIXHq0BKUtHBoZhcZihSODBTAQIh1Yqjb3KgiPcPceOByqKsC4omcLF07HMdYwa02g100Ak9LGJU5"
-);
+const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const CheckoutForm = () => {
   const { cart, totalAmount, shippingFee, clearCart } = useCartContext();
